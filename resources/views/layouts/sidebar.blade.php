@@ -25,14 +25,16 @@
             </li>
 
             <!-- Data Pengguna -->
-            <li class="nav-header">Data Order Barang</li>
+            <li class="nav-header">Data Barang</li>
 
             <li class="nav-item">
                 <a href="{{ url('/level') }}" class="nav-link {{ ($activeMenu == 'level') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-layer-group"></i>
-                    <p>Data Barang</p>
+                    <p>Daftar Barang</p>
                 </a>
             </li>
+
+            <li class="nav-header">Transaksi</li>
 
             <li class="nav-item">
                 <a href="{{ url('/user') }}" class="nav-link {{ ($activeMenu == 'user') ? 'active' : '' }}">
