@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::get('/', function () {
 
 Route::get('/barang', [BarangController::class, 'index']);
 Route::get('/order', [OrderController::class, 'index']);
+Route::get('/', [WelcomeController::class, 'index']);
