@@ -9,7 +9,6 @@ class Order extends Model
 {
     use HasFactory;
 
-    // Sesuaikan dengan nama tabel
     protected $table = 'm_order';
 
     // Kolom-kolom yang bisa diisi secara mass-assignment
@@ -20,7 +19,7 @@ class Order extends Model
         'tanggal_order',
     ];
 
-    // Relasi: Order milik satu Barang
+    // Relasi dengan Barang
     public function barang()
     {
         return $this->belongsTo(Barang::class, 'barang_id');
