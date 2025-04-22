@@ -28,20 +28,32 @@
             <li class="nav-header">Data Barang</li>
 
             <li class="nav-item">
-                <a href="{{ url('/level') }}" class="nav-link {{ ($activeMenu == 'level') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-layer-group"></i>
+                <a href="{{ route('barang.index') }}" class="nav-link {{ ($activeMenu == 'barang') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-box"></i>
                     <p>Daftar Barang</p>
                 </a>
-            </li>
+            </li>            
 
             <li class="nav-header">Transaksi</li>
 
             <li class="nav-item">
-                <a href="{{ url('/user') }}" class="nav-link {{ ($activeMenu == 'user') ? 'active' : '' }}">
-                    <i class="nav-icon far fa-user"></i>
+                <a href="{{ url('/order') }}" class="nav-link {{ ($activeMenu == 'order') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-shopping-cart"></i>
                     <p>Data Order</p>
                 </a>
-            </li>
+            </li>  
+             
+            <!-- Tombol Logout -->
+            <li class="nav-header">Akun</li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                    <p>Logout</p>
+                </a>
+                <form id="logout-form" action="{{ url('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>         
         </ul>
     </nav>
 </div>
