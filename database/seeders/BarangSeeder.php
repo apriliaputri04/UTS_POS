@@ -7,9 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class BarangSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         DB::table('m_barang')->insert([
@@ -21,7 +18,7 @@ class BarangSeeder extends Seeder
             [
                 'nama_barang' => 'Mouse Logitech',
                 'harga' => 250000,
-                'stok' => 50,
+                'stok' => 40,
             ],
             [
                 'nama_barang' => 'Keyboard Mechanical',
@@ -36,7 +33,7 @@ class BarangSeeder extends Seeder
             [
                 'nama_barang' => 'Flashdisk 64GB',
                 'harga' => 120000,
-                'stok' => 100,
+                'stok' => 10,
             ],
         ]);
     }
