@@ -33,6 +33,7 @@
                 @error('barang_id')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
+                <small class="text-muted">Harus dipilih</small>
             </div>
 
             <div class="form-group">
