@@ -47,23 +47,27 @@ class OrderController extends Controller
     }
 
     public function create()
-    {
+    {   
+        // Menyusun data breadcrumb untuk navigasi di halaman view
         $breadcrumb = (object) [
             'title' => 'Tambah Order',
             'list' => ['Home', 'Order', 'Tambah']
         ];
 
+         // Menyusun informasi umum halaman
         $page = (object) [
             'title' => 'Tambah order baru'
         ];
 
         $activeMenu = 'order';
+        // Mengambil semua data barang dari database untuk ditampilkan pada form order 
         $barang = Barang::all();
 
+        // Mengembalikan view 'order.create' dengan data yang sudah disiapkan
         return view('order.create', compact('breadcrumb', 'page', 'activeMenu', 'barang'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request) // Menyimpan data dalam bentuk data table
     {
         $barang = Barang::all();
 

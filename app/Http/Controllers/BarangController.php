@@ -43,22 +43,25 @@ class BarangController extends Controller
     }
 
     public function create()
-    {
+    {   
+        // Menyusun data breadcrumb untuk ditampilkan di halaman 
         $breadcrumb = (object) [
             'title' => 'Tambah Barang',
             'list' => ['Home', 'Barang', 'Tambah']
         ];
 
+        // Menyusun informasi halaman
         $page = (object) [
-            'title' => 'Tambah barang baru'
+            'title' => 'Tambah barang baru' // Judul halaman yang akan ditampilkan
         ];
 
         $activeMenu = 'barang';
 
+        // Menampilkan view 'barang.create' dengan membawa data breadcrumb, page, dan activeMenu
         return view('barang.create', compact('breadcrumb', 'page', 'activeMenu'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request) // Menyimpan data dalam bentuk data table
     {
         $request->validate([
             'nama_barang' => 'required|string|max:100',
